@@ -8,5 +8,4 @@ import java.util.Optional;
 
 public interface PostRepository extends CrudRepository<PostEntity, Long> {
     Optional<PostEntity> findById(String accountId);
-
 }

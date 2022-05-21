@@ -12,9 +12,9 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/sing/up")
+@RequestMapping("/sign/up")
 public class PostController {
-    private final PostService postService;
+    private final PostService postService; // PostService 클래스를 전달해주는 매개변수 postService
 
     @PostMapping
     public void postEntity(@RequestBody @Valid PostRequest postRequest) throws Exception{

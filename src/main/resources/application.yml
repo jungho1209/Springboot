@@ -8,6 +8,7 @@ spring:
     username: root
     password: jung1209!!
 
+
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
