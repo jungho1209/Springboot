@@ -1,4 +1,4 @@
-package com.example.springboot.Post.domain.type;
+package com.example.springboot.User.domain.type;
 
 public enum Sex {
     MALE,

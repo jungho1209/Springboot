@@ -1,6 +1,6 @@
-package com.example.springboot.Post.domain;
+package com.example.springboot.User.domain;
 
-import com.example.springboot.Post.domain.type.Sex;
+import com.example.springboot.User.domain.type.Sex;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter // 접근자 필드에 접근하게 해준다 ? 필드에 Get 메소드 생성해줌
 @NoArgsConstructor // 매개변수가 없는 생성자
 @Entity // Entity 클래스라는걸 스프링부트에 명시
-public class PostEntity {
+public class UserEntity {
     @Id // 해당 테이블의 PK 필드를 나타냄, 하나만 존재하는 유니크 번호 부여
     @GeneratedValue(strategy = GenerationType.IDENTITY) // PK의 생성 규칙 나타냄, DB 에서는 내용에 맞춰 계속 행을 늘려줌(자동 증가), 정리 -> 규칙 정의 ?
     private Long id;
@@ -33,7 +33,7 @@ public class PostEntity {
     @Column(length = 6, nullable = false)
     private Sex sex;
     @Builder
-    public PostEntity(String accountId, String email, String password, String name, Long studentId, Sex sex) {
+    public UserEntity(String accountId, String email, String password, String name, Long studentId, Sex sex) {
         this.accountId = accountId;
         this.email = email;
         this.password = password;

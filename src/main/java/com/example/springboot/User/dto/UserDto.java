@@ -1,12 +1,12 @@
-package com.example.springboot.Post.dto;
+package com.example.springboot.User.dto;
 
-import com.example.springboot.Post.domain.type.Sex;
+import com.example.springboot.User.domain.type.Sex;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class PostDto {
+public class UserDto {
     private String accountId;
     private String email;
     private String name;
