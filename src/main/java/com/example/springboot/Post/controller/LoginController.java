@@ -1,7 +1,7 @@
 package com.example.springboot.Post.controller;
 
-import com.example.springboot.Post.dto.request.PostRequest;
-import com.example.springboot.Post.service.PostService;
+import com.example.springboot.Post.LoginRequest;
+import com.example.springboot.Post.service.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,11 +13,11 @@ import javax.validation.Valid;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/sign")
-public class PostController {
-    private final PostService postService; // PostService 클래스를 전달해주는 매개변수 postService
+public class LoginController {
+    private final LoginService loginService;
 
-    @PostMapping("/up")
-    public void postEntity(@RequestBody @Valid PostRequest postRequest) throws IllegalArgumentException {
-        postService.postEntity(postRequest);
+    @PostMapping("/in")
+    public void postEntity(@RequestBody @Valid LoginRequest loginRequest) throws IllegalArgumentException {
+        loginService.postEntity(loginRequest);
     }
 }
