@@ -13,6 +13,7 @@ public class LoginController {
 
     private final LoginService loginService;
 
+
     @PostMapping("/signin")
     public void logIn(@RequestBody LoginRequest loginRequest) {
         loginService.logIn(loginRequest);

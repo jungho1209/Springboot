@@ -13,10 +13,11 @@ import javax.validation.Valid;
 @RestController
 public class UserController {
 
-    private final UserService postService; // PostService 클래스를 전달해주는 매개변수 postService
+    private final UserService userService; // UserService 클래스를 전달해주는 매개변수 userService
+
 
     @PostMapping("/signup")
-    public void signUp(@RequestBody @Valid UserRequest postRequest) {
-        postService.signUp(postRequest);
+    public void signUp(@RequestBody @Valid UserRequest userRequest) {
+        userService.signUp(userRequest);
     }
 }
