@@ -14,7 +14,7 @@ public class LoginController {
     private final LoginService loginService;
 
 
-    @PostMapping("/signin")
+    @PostMapping("/signin") // 로그인 엔드포인트
     public void logIn(@RequestBody LoginRequest loginRequest) {
         loginService.logIn(loginRequest);
     }
