@@ -2,8 +2,9 @@ package com.example.springboot.User.service;
 
 import com.example.springboot.User.domain.UserEntity;
 import com.example.springboot.User.domain.repository.UserRepository;
-import com.example.springboot.User.dto.UserDto;
 import com.example.springboot.User.dto.request.UserRequest;
+import com.example.springboot.User.dto.response.UserDto;
+import com.example.springboot.User.dto.response.UserListDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -35,12 +36,21 @@ public class UserService {
                 .build();
         userRepository.save(userEntity);
     }
+    @Transactional
+    public void delete(Long id){
+        UserEntity userEntity = userRepository.findById(id)
+                .orElseThrow(() -> new
+                        IllegalArgumentException("해당 계정이 없습니다. id = + id"));
+        userRepository.delete(userEntity);
+    }
 
     @Transactional(readOnly = true)
+    public UserListDto searchAllDesc(){
 
-    public List<UserDto> searchAllDesc() {
-        return userRepository.findAllByOrderByIdDesc().stream()
+        List<UserDto> userDtoList = userRepository.findAllByOrderByIdDesc()
+                .stream()
                 .map(UserDto::new)
                 .collect(Collectors.toList());
+        return new UserListDto(userDtoList);
     }
 }
