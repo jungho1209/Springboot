@@ -1,4 +1,4 @@
-package com.example.springboot.User.dto;
+package com.example.springboot.User.dto.response;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
