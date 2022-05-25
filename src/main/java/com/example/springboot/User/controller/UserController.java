@@ -24,7 +24,7 @@ public class UserController {
         userService.delete(id);
     }
 
-    @GetMapping("/user/search")
+    @GetMapping("/user/search") // 리스트 타입 바꿈
     public UserListDto searchAllDesc(){
         return userService.searchAllDesc();
     }
