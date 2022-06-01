@@ -1,6 +1,6 @@
 package com.example.springboot.User.dto.request;
 
-import com.example.springboot.User.domain.UserEntity;
+import com.example.springboot.User.domain.type.Sex;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,10 +11,9 @@ public class PutRequest {
     private String accountId;
     private String password;
     private String name;
+    private String email;
+    private Long studentId;
+    private Sex sex;
 
-    public PutRequest(UserEntity userEntity){
-        this.accountId = userEntity.getAccountId();
-        this.password = userEntity.getPassword();
-        this.name = userEntity.getName();
-    }
+
 }
