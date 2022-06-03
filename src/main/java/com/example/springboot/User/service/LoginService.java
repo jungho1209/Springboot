@@ -22,7 +22,7 @@ public class LoginService {
                 .orElseThrow(RuntimeException::new);
 
         if (!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            throw new RuntimeException(); // loginRequest 의 비번과 , user 의 비번이 같은지 확인
-        } // RuntimeException 은 우선 500코드를 띄움, 다른 코드를 띄우기 위해서 클래스를 만들어 따로 예외를 처리해줌.
+            throw new RuntimeException();
+        }
     }
 }

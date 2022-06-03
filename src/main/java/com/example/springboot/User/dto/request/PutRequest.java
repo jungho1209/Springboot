@@ -1,6 +1,6 @@
-package com.example.springboot.User.dto.request;
+package com.example.springboot.user.dto.request;
 
-import com.example.springboot.User.domain.type.Sex;
+import com.example.springboot.user.domain.type.Sex;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -1,12 +1,11 @@
-package com.example.springboot.user.dto.request;
+package com.example.springboot.user.dto.response;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class LoginRequest {
-
+public class LoginResponse {
     private String accountId;
     private String password;
 }

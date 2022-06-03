@@ -1,6 +1,6 @@
-package com.example.springboot.User.dto.response;
+package com.example.springboot.user.dto.response;
 
-import com.example.springboot.User.domain.UserEntity;
+import com.example.springboot.user.domain.type.Sex;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,15 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserPutResponse {
 
-
     private String accountId;
     private String password;
     private String name;
+    private String email;
+    private Long studentId;
+    private Sex sex;
 
-
-    public UserPutResponse(UserEntity userEntity){
-        this.accountId = userEntity.getAccountId();
-        this.password = userEntity.getPassword();
-        this.name = userEntity.getName();
-    }
 }
