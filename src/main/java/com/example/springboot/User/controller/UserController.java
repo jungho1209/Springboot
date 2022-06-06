@@ -14,10 +14,9 @@ import javax.validation.Valid;
 @RestController
 public class UserController {
 
-    private final UserService userService; // UserService 클래스를 전달해주는 매개변수 userService
+    private final UserService userService;
 
     @PostMapping("/signup")
-    //  DTO 에 어노테이션으로 명시한 후 RequestBody 에 @Valid 어노테이션을 달면 유효성 검증을 수행한 후 검증이 통과되었을 때에만 메서드 내부로 진입
     public void signUp(@RequestBody @Valid UserRequest userRequest) {
         userService.signUp(userRequest);
     }
