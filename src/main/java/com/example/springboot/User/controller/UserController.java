@@ -3,6 +3,7 @@ package com.example.springboot.user.controller;
 import com.example.springboot.user.dto.request.PutRequest;
 import com.example.springboot.user.dto.request.UserRequest;
 import com.example.springboot.user.dto.response.UserListResponse;
+import com.example.springboot.user.dto.response.UserSearchResponse;
 import com.example.springboot.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class UserController {
         userService.signUp(userRequest);
     }
 
-    @DeleteMapping("delete/{account-id}")
+    @DeleteMapping("{account-id}")
     public void delete(@PathVariable("account-id") Long id) {
         userService.delete(id);
     }
@@ -31,8 +32,15 @@ public class UserController {
         return userService.searchAllDesc();
     }
 
-    @PutMapping("/edit/{account-id}")
-    public String update(@PathVariable("account-id") Long id, @RequestBody PutRequest putRequest) {
+    @PutMapping("/{account-id}")
+    public String update(@PathVariable("account-id") Long id,
+                         @RequestBody PutRequest putRequest) {
         return userService.update(id, putRequest);
     }
+
+    @GetMapping("/{accountId}")
+    public UserSearchResponse searchUser(@PathVariable("accountId") String accountId) {
+        return userService.searchUser(accountId);
+    }
+
 }
